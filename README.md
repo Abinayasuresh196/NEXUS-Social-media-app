@@ -1,73 +1,250 @@
-# Welcome to your Lovable project
+Nexus 🚀
 
-## Project info
+A Modern Real-Time Social Media Platform
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Project Overview
 
-## How can I edit this code?
+Nexus is a modern, production-ready social media application built using React, TypeScript, and Supabase.
+It delivers a rich, Instagram-like social networking experience enhanced with real-time interactions, scalable architecture, and a clean developer-friendly codebase.
 
-There are several ways of editing your application.
+Nexus is designed with performance, security, and extensibility in mind, making it suitable for real-world deployment and further feature expansion.
 
-**Use Lovable**
+Tech Stack & Architecture
+Frontend
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Framework: React 18 + TypeScript
 
-Changes made via Lovable will be committed automatically to this repo.
+Build Tool: Vite 7.3.0
 
-**Use your preferred IDE**
+Styling: Tailwind CSS with shadcn/ui
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Routing: React Router DOM v6
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+State Management: TanStack Query (React Query)
 
-Follow these steps:
+Icons: Lucide React
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Date Utilities: date-fns, dayjs
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Backend & Database
 
-# Step 3: Install the necessary dependencies.
-npm i
+Backend Platform: Supabase
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Authentication:
 
-**Edit a file directly in GitHub**
+Email & Password
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Google OAuth
 
-**Use GitHub Codespaces**
+Database: PostgreSQL
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Storage: Supabase Storage (media files)
 
-## What technologies are used for this project?
+Real-time: Supabase Realtime (live updates & messaging)
 
-This project is built with:
+Key Dependencies
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+UI Components: shadcn/ui (Radix UI primitives)
 
-## How can I deploy this project?
+Forms & Validation: React Hook Form + Zod
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Notifications: Sonner (toast notifications)
 
-## Can I connect a custom domain to my Lovable project?
+Utility Helpers: clsx (conditional class handling)
 
-Yes, you can!
+Database Schema
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Nexus uses a well-structured PostgreSQL schema designed for scalability and security.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Core Entities
+
+profiles – User profile data (username, bio, avatar, privacy)
+
+posts – Media posts with captions, locations, and media types
+
+comments – Nested comments with parent-child relationships
+
+likes – Likes on posts and comments
+
+follows – User follow relationships
+
+bookmarks – Saved posts
+
+conversations – Direct message threads
+
+messages – Chat messages with read receipts
+
+notifications – Activity notifications
+
+stories – Temporary 24-hour stories
+
+search_history – User search records
+
+hashtags – Hashtag tagging and discovery
+
+Features
+Authentication & User Management
+
+Email/password authentication
+
+Google OAuth login
+
+Profile editing (avatar, bio, website, display name)
+
+Private account support
+
+Social Features
+
+Feed – Real-time feed with infinite scrolling
+
+Post Creation – Image & video uploads with captions and location
+
+Stories – 24-hour temporary stories
+
+Comments – Nested replies
+
+Likes – Real-time post and comment likes
+
+Follow System – Follow/unfollow with notifications
+
+Bookmarks – Save posts for later
+
+Messaging
+
+Direct Messaging – Real-time chat
+
+Conversation List – Last message previews
+
+Read Receipts – Message seen indicators
+
+Discovery & Engagement
+
+Explore – User and content search
+
+Notifications – Live activity updates
+
+Search History – Recently searched users/hashtags
+
+Hashtags – Content discovery via tags
+
+Real-Time Capabilities
+
+Live feed updates
+
+Instant chat messaging
+
+Real-time notifications
+
+Live comments & likes
+
+Immediate profile updates across the app
+
+Component Architecture
+Layout System
+
+MainLayout – Responsive layout with:
+
+Sidebar navigation (desktop)
+
+Bottom navigation (mobile)
+
+Mobile-First Design with desktop optimizations
+
+Core Components
+
+PostCard – Post display with likes, comments, actions
+
+StoriesRow – Horizontal stories carousel
+
+StoryViewer – Full-screen story viewer with replies
+
+NotificationList – Real-time activity feed
+
+Auth Components – Login & signup forms with validation
+
+Custom Hooks
+
+useAuth – Authentication state
+
+usePosts – Post fetching and updates
+
+useProfile – Profile management
+
+useNotifications – Notification system
+
+useMessages – Messaging logic
+
+useStories – Story creation & viewing
+
+useSocialActions – Likes, comments, follows, bookmarks
+
+Security & Performance
+Security
+
+Row Level Security (RLS) policies
+
+Auth-protected routes and data access
+
+Private account enforcement
+
+Secure media uploads with access rules
+
+Performance Optimizations
+
+Lazy-loaded images and media
+
+Optimized PostgreSQL queries & indexing
+
+Controlled real-time subscriptions
+
+Component memoization
+
+Efficient server-state caching with TanStack Query
+
+Developer Experience
+Tooling
+
+Full TypeScript type safety
+
+ESLint & Prettier
+
+Vite HMR for fast development
+
+Centralized error handling
+
+Toast-based user feedback
+
+Database Migrations
+
+Supabase migration workflow
+
+Incremental schema evolution
+
+RLS and policy improvements
+
+Security rule updates
+
+Project Structure
+src/
+│
+├── components/     # Reusable UI components
+├── pages/          # Route-level components
+├── hooks/          # Custom React hooks
+├── contexts/       # Context providers
+├── integrations/   # Supabase & external services
+├── types/          # TypeScript type definitions
+├── utils/          # Helper utilities
+├── styles/         # Global styles
+
+Status
+
+✅ Production-ready
+✅ Scalable architecture
+✅ Modern UI & UX
+✅ Real-time enabled
+
+Conclusion
+
+Nexus is a full-featured, modern social media platform showcasing best practices in React, TypeScript, and Supabase development.
+It is built to scale, easy to maintain, and ready for real-world deployment or further innovation.
+
